@@ -1,0 +1,24 @@
+import datetime as dt
+import pandas as pd
+
+
+# Print the header of account_opened
+print(banking["account_opened"].head())
+
+# Print the header of account_opened
+print(banking['account_opened'].head())
+
+# Convert account_opened to datetime # Infer datetime format # Return missing value for error
+banking['account_opened'] = pd.to_datetime(banking['account_opened'], infer_datetime_format = True, errors ='coerce') 
+
+# Print the header of account_opend
+print(banking['account_opened'].head())
+
+# Convert account_opened to datetime # Infer datetime format # Return missing value for error
+banking['account_opened'] = pd.to_datetime(banking['account_opened'], infer_datetime_format = True, errors ='coerce') 
+
+# Get year of account opened
+banking['acct_year'] = banking['account_opened'].dt.strftime('%Y')
+
+# Print acct_year
+print(banking['acct_year'])
